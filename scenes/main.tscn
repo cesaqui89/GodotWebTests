@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3utawv6x38ev"]
+
+[ext_resource type="PackedScene" uid="uid://bwlyn44q3q463" path="res://scenes/ruleta.tscn" id="1_xyybv"]
+[ext_resource type="PackedScene" uid="uid://bfhfns2tko8na" path="res://scenes/boton.tscn" id="2_deyf1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2v3oa"]
+bg_color = Color(0.381703, 0.381703, 0.381703, 1)
+
+[node name="Node" type="Node"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -324.0
+offset_right = 575.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2v3oa")
+
+[node name="RuletaManager" parent="UI/Panel" instance=ExtResource("1_xyybv")]
+position = Vector2(302, 352)
+
+[node name="Girar" parent="UI/Panel" instance=ExtResource("2_deyf1")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 228.0
+offset_top = -605.0
+offset_right = 456.0
+offset_bottom = -511.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[connection signal="pressed" from="UI/Panel/Girar" to="UI/Panel/RuletaManager" method="_on_girar_pressed"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwlyn44q3q463"]
+
+[ext_resource type="Script" path="res://scripts/ruleta.gd" id="1_k3mc1"]
+[ext_resource type="Texture2D" uid="uid://dblgxsape6sk6" path="res://assets/textures/ruleta5colores.png" id="2_lkjci"]
+[ext_resource type="PackedScene" uid="uid://dm4ymv42pxjre" path="res://scenes/integrante.tscn" id="3_alfhe"]
+[ext_resource type="PackedScene" uid="uid://4ten8uejcr2e" path="res://scenes/marcador.tscn" id="4_kbxgq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_htkrn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lkjci")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RuletaManager" type="Node2D"]
+z_index = 2
+script = ExtResource("1_k3mc1")
+
+[node name="Rueda" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_htkrn")
+
+[node name="Area2D" parent="Rueda" instance=ExtResource("3_alfhe")]
+position = Vector2(39, -55)
+rotation = -0.316694
+
+[node name="Area2D2" parent="Rueda" instance=ExtResource("3_alfhe")]
+position = Vector2(55, 23)
+rotation = 0.940732
+
+[node name="Area2D3" parent="Rueda" instance=ExtResource("3_alfhe")]
+position = Vector2(-6.00001, 57)
+rotation = 2.19737
+
+[node name="Area2D4" parent="Rueda" instance=ExtResource("3_alfhe")]
+position = Vector2(-63, 13)
+rotation = 3.45401
+
+[node name="Area2D5" parent="Rueda" instance=ExtResource("3_alfhe")]
+position = Vector2(-38, -51)
+rotation = 4.71064
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marcador" parent="." instance=ExtResource("4_kbxgq")]
+position = Vector2(-1, -301)
+scale = Vector2(0.354047, 0.354047)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

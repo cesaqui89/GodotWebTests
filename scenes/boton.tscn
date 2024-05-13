@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfhfns2tko8na"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsivr"]
+bg_color = Color(0.490731, 0.661546, 0.334888, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Girar" type="Button"]
+offset_right = 228.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_hsivr")
+text = "GIRAR"

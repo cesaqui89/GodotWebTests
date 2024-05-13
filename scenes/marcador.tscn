@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://4ten8uejcr2e"]
+
+[ext_resource type="Texture2D" uid="uid://nx30snamupi4" path="res://assets/textures/marcador.png" id="1_sxmxo"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_skcr8"]
+a = Vector2(0, -46)
+b = Vector2(0, 108)
+
+[node name="Marcador" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_sxmxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_skcr8")
